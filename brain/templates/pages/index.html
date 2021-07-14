@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="index-main-wrapper">
+    <div class="listening-button">
+        <div id="listen-button" class="microphone-container">
+            <svg id="microphone-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mic"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+        </div>
+    </div>
+    <div class="command-wrapper-box">
+        <div class="command-wrapper-box__inner">
+            <div class="command-heading">
+                Command History
+            </div>
+            <div id="commands">
+            </div>
+            <div class="command-footer">
+                <form id="command-form">
+                    {% csrf_token %}
+                    <input autocomplete="off" type="text" name="command-input" id="command-input" placeholder="Enter a command here">
+                    <button class="send-command-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/pages/index.js' %}"></script>
+{% endblock %}
