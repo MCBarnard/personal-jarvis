@@ -12,16 +12,19 @@ def command(request):
         data = json.loads(request.body)
         requestCommand = data.get("body").lower()
         if requestCommand == "":
+            # Do Stuff here
             return JsonResponse({
                             "code": 200,
                             "message": "I need a command to do something..."
                             })
         if "how are you" in requestCommand:
+            # Do Stuff here
             return JsonResponse({
                             "code": 200,
                             "message": "I am doing great, thank you for asking!"
                             })
         if "who are you" in requestCommand:
+            # Do Stuff here
             return JsonResponse({
                             "code": 200,
                             "message": "My name is Jarvis"
